@@ -1,0 +1,145 @@
+:root {
+  --main-color: #484848;
+  --tool-blue: #007cb0;
+  --tool-red: #a64452;
+}
+
+body {
+  max-width: 779px;
+  font-size: 18px;
+  font-family: monospace;
+  color: var(--main-color);
+  margin: 2em auto;
+}
+
+.infosite_tool_layout {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 479px;
+}
+
+div[id^="infosite_"],
+input[type="text"],
+#infosite_number_of_pages select {
+  border: thin solid var(--tool-blue);
+  border-radius: 5px;
+  box-shadow: 1px 1px steelblue;
+}
+
+div[id^="infosite_"] {
+  padding: 1em;
+  margin: 1em auto;
+}
+
+input[type="text"] {
+  padding: 0.25em 0;
+}
+
+#infosite_tracking > div,
+#infosite_sponsorship,
+#infosite_poll > div,
+#infosite_number_of_media > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#infosite_tracking label,
+#infosite_sponsorship label,
+#infosite_poll label,
+#infosite_number_of_media label {
+  margin-right: 1em;
+}
+
+#infosite_header > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100% / 2);
+  margin: auto;
+}
+
+#infosite_header > div > :first-child {
+  margin: 0 1em;
+}
+
+#infosite_number_of_pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#infosite_number_of_pages > :last-child {
+  font-size: 75%;
+}
+
+#page_titles_table > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#page_titles_table > div * {
+  overflow: hidden;
+}
+
+.infosite_table_header {
+  width: 100%;
+  font-size: 10px;
+}
+
+.infosite_table_header > div {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+#infosite_page_titles input {
+  max-width: 6em;
+}
+
+.media_table {
+  display: flex;
+  flex-direction: column;
+}
+.media_table > div {
+  margin: 0.5em;
+}
+
+.errorText,
+.disclaimer {
+  font-size: 12px;
+  color: var(--tool-red);
+  text-align: center;
+}
+
+#videos_table,
+#audios_table {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+@media screen and (max-width: 500px) {
+  .infosite_tool_layout {
+    font-size: 75%;
+  }
+}
