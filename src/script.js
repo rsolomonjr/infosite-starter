@@ -1,11 +1,21 @@
 function changePages() {
-  const descriptionTitle =
-    "<div><div><input type='text' id='description' name='description' placeholder='page_title'/></div><div><input type='radio'></div><div><input type='text' id='page_url' name='page_url' placeholder='page_url' /></div></div>";
-  var selector = document.getElementsByName("number_of_pages")[0];
-  var value = selector[selector.selectedIndex].value;
-  document.getElementById(
-    "page_titles_table"
-  ).innerHTML = descriptionTitle.repeat(value);
+  let selector = document.getElementsByName("number_of_pages")[0];
+  let numberSelected = selector[selector.selectedIndex].value;
+
+  let number = 1;
+  let descriptionTitle = "";
+
+  while (number <= numberSelected) {
+    descriptionTitle +=
+      '<div><div><input type="text" id="description" name="description" placeholder="page_title"/></div><div><input type="radio" name="radio' +
+      number.toString() +
+      '" class="radio" checked></div><div><input type="radio"  name="radio' +
+      number.toString() +
+      '" class="radio"></div><div><input type="text" id="page_url" name="page_url" placeholder="page_url" /></div></div>';
+    number++;
+  }
+
+  document.getElementById("page_titles_table").innerHTML = descriptionTitle;
 }
 
 function getNumberOfVideos() {
@@ -53,3 +63,16 @@ function getNumberOfAudio() {
     document.querySelector("#audios_table").innerHTML = audiosOutTable;
   }
 }
+
+$("input[type=radio]").each(function () {
+  var secondClick = true;
+  $(this).change(function () {
+    secondClick = false;
+  });
+  $(this).click(function () {
+    if (secondClick) {
+      $(this).prop("checked", false);
+    }
+    secondClick = true;
+  });
+});
