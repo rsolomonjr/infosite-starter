@@ -45,6 +45,14 @@ select {
   box-shadow: 1px 1px steelblue;
 }
 
+input[type="submit"] {
+  border: thin solid var(--tool-blue);
+  border-radius: 5px;
+  box-shadow: 1px 1px #007cb0;
+  background: #fff;
+  font-size: 16px
+}
+
 div[id^="infosite_"],
 select {
   padding: 1em;
@@ -152,6 +160,11 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   margin: 1em 0;
+}
+
+form :last-child {
+  display: flex;
+  justify-content: right
 }
 
 @media screen and (max-width: 500px) {
